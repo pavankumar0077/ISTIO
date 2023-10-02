@@ -39,3 +39,38 @@ having to change the code in a microservice architecture.
 - ``` https://istio.io/latest/docs/setup/install/istioctl/ ```
 - ``` istioctl install --set profile=demo -y ``` To install
 - ``` istioctl verify-install ``` To Verify
+
+# Deploy a sample deployment provided by ISTIO
+- FRIST WE HAVE TO ENABLE namespace for istio-injection this is for SIDECAR Containers
+- ``` kubectl label namespace default istio-injection=enabled ``` value = enabled or disabled bsed on requirement
+- Go to installed folder and install ``` kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml ```
+-  Check the pods ``` kubectl get pods ``` To verify the deployment of pods
+-  Analyze the istio ``` istioctl analyze ```
+
+### KIALI
+- Visualizing Service Mesh with KIALI
+- it has WEB BASED GRAPHICALLY INTERFACE
+- Visualizing and Managing SERVICE MESH
+- Kiali is used for observing connecctios and microservices of itio services mesh, defining and valiating them define, validate and Observe
+- It also have features like requrest routing, circut breakers, request rates, latency and more
+- Common traffic and automatically generates ISTIO configurations
+
+# INSTALL KIALI
+- Go to samples folder that ISTIO given when installed
+- ``` kubectl apply -f samples/addons ```
+- ``` kubectl rollout status deployment/kiali -n istio-system ``` To check kiali is rollout
+- ``` kubectl -n istio-system get svc kiali ``` To check kiali service is running or not in cluster
+- ``` istioctl dashboard kiali ``` TO GET THE KIALI DASHBOARD
+
+# CREATE TRAFFIC INTO OUR MESH
+- ``` kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yam ``` GATEWAY TO ACCESS THE APPLICATION FROM OUTSIDE
+- ``` istioctl analyze  ```
+- ``` minikube ip````
+- export INGRESS_HOST=$(minikube ip)
+- echo $INGRESS_HOST
+- ``` export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}') ``` EXPORT ingress gaterway service port
+- ``` curl "http://$INGRESS_HOST:$INGRESS_PORT/productpage" ``` Now check the application
+- ``` echo "http://$INGRESS_HOST:$INGRESS_PORT/productpage" ``` To get the URL to check in web
+- ``` http://192.168.39.30:30238/productpage ```
+- Now check the KIALI DASHBOARD, GRAPH
+- ``` KIALI is very helpful in IDENTIFING PROBLEMS IN SERVICE MESH, Here we gonna delete ``` 
