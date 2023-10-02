@@ -124,4 +124,8 @@ having to change the code in a microservice architecture.
 - with istio and virtual services we can CREATE VIRTUAL SERVICE INSTEAD FO SERVICE AND WE CAN SET WEIGHT IN THIS VIRUTAL SERVICES LIKE 99% AND 1%
 - ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/30aec163-1ec1-4a2b-9306-6a2cdf5d99de)
 
+# DESTINATION RUlES
+- Subsets are defined in destination rules
+-
+
 
