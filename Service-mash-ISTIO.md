@@ -104,3 +104,24 @@ having to change the code in a microservice architecture.
 - ``` kubectl get gateway ``` Check
 - ``` kubectl describe gateway bookinfo-gateway```
 
+# VIRTUAL SERVICES IN ISTIO
+- How to know if the END-USER enter the url to which page should be shown.
+- All Routing rules are configured through VIRTUAL SERVICES. It defines a set of routing rules for traffic comming from the ingress gateway to the SERVICE MESH
+- When Virtual servies is created ISTIO CONTROL PLANE applies the new configuration to all the sidecar proxies
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/b10b67c7-b6f3-4461-9898-e8ef42a8f846)
+
+ ### create virtual services
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/fbc145d8-ca4e-497c-a595-9a285d0244f1)
+- **WITH KUBERNETES**
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/3d43f7fa-615b-4cd6-aa03-030f0caddfa7)
+- Here we have created 3 deployments with reviews-v1,v2 and v3 --> AND 1 with 3 replica and rest 2 with 1 - 1
+- But we want to 3 replicas for reviews-v3 now, Becoz users found it is useful and users wants to use reviews-v3 now
+- So we dicided to ROUTE ALL TRAFFIC TO reviews-v3 now
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/8e33c9ea-b1f9-4780-ba08-c3ed171a8bb1)
+- THIS PROCESS IS CALLED AB TEST. without any downtime or distrution to the service. (Identifing the traffic and making it scale)
+- THIS WHOLE PROCESS IS KUBERNETES NATIVE WAY OF PERFORMING traffic
+- This is not possible it uses like 75% and 25% ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/a15c12f3-c639-45a8-b5a0-471debd212df)
+- with istio and virtual services we can CREATE VIRTUAL SERVICE INSTEAD FO SERVICE AND WE CAN SET WEIGHT IN THIS VIRUTAL SERVICES LIKE 99% AND 1%
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/30aec163-1ec1-4a2b-9306-6a2cdf5d99de)
+
+
