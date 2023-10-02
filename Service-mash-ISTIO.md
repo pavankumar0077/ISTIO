@@ -73,4 +73,9 @@ having to change the code in a microservice architecture.
 - ``` echo "http://$INGRESS_HOST:$INGRESS_PORT/productpage" ``` To get the URL to check in web
 - ``` http://192.168.39.30:30238/productpage ```
 - Now check the KIALI DASHBOARD, GRAPH
-- ``` KIALI is very helpful in IDENTIFING PROBLEMS IN SERVICE MESH, Here we gonna delete ``` 
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/891f8df0-9707-4476-a112-e2d59ed4f720)
+- ``` KIALI is very helpful in IDENTIFING PROBLEMS IN SERVICE MESH, Here we gonna delete ```  kubectl delete deployments/productpage-v1 ```
+- And check dashboard - ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/01f9c875-8ae1-40c7-9f52-b6d974ecc8e0)
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/6a874f40-4919-4d35-8be7-8503104260c8)
+- 
+- 
