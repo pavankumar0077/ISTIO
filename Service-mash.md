@@ -32,4 +32,5 @@ having to change the code in a microservice architecture.
   3. Galley - It helps in the validating configuration files
 - These 3 components are later combined into single daemon called ISTIOD
 - Each service has a separate component in it along with ENVOY PROXY called ISTIO AGENT
-- These ISTIO AGENT is responsibel for passing configuration secrets to ENVOY PROXY 
+- These ISTIO AGENT is responsibel for passing configuration secrets to ENVOY PROXY
+- 
