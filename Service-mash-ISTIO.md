@@ -79,4 +79,28 @@ having to change the code in a microservice architecture.
 - And check dashboard - ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/01f9c875-8ae1-40c7-9f52-b6d974ecc8e0)
 - ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/6a874f40-4919-4d35-8be7-8503104260c8)
 
-# 
+# TRAFFIC MANAGEMENT
+![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/e0e1f0b9-d563-4218-99a1-930f27da29a5)
+### GATEWAYs in ISTIO
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/172e9d81-dc38-4b91-b46b-4d786b547daf)
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/e977f918-222a-4e94-a613-17d6bc6a0d3c)
+- This kubernetes ingress routed to the product page service and users can access by external world
+- Gateways are load balancer that sits at the edge, they manages the inbound and outbound traffic to service mesh
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/32b2c995-d75c-4ed3-b847-1894e89d414b)
+- This is the RECOMMEDED approach such as compare to KUBERNETES INGRESS, ISTIO GATEWAY
+- iSTIO GATWAY CONTROLLERS ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/2858414f-2a87-469f-97f0-33572bff6fd2)
+- INGRESS -- INBOUD SERVIES AND EGRESS -- OUTBOUND SERVIVES
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/a5a31e59-e161-42e5-89fc-8ac5813db1fc)
+- kUBERNETS USES CONTROLLERS LIKE NGINX
+- ISTIO DEPLOY INGRESS GATWAYS USING ENVOY PROXIES
+- wE CAN ALSO HAVE OWN CUSTOM INGRESS GATEWAYS ALSO
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/dba981d7-b07a-46e1-8e6c-48d027eedbc4)
+- Here we have created ingress gatway to access the traffic and route to the bookinfo-gateway and ot the applcaiton
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/69b7ab44-31e6-4608-9d21-905558d3e327)
+- If we have more ingress controllers like custom then use SELECTOR lable
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/aed467a8-8f36-461a-933b-9938afaf957a)
+- ![image](https://github.com/pavankumar0077/ISTIO/assets/40380941/256d463d-0cea-418a-8da7-13c2b2a0abd0)
+- ``` kubectl apply -f bookinfo-gateway.yaml ``` To book info gateway
+- ``` kubectl get gateway ``` Check
+- ``` kubectl describe gateway bookinfo-gateway```
+
