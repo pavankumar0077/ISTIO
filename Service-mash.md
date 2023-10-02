@@ -33,4 +33,9 @@ having to change the code in a microservice architecture.
 - These 3 components are later combined into single daemon called ISTIOD
 - Each service has a separate component in it along with ENVOY PROXY called ISTIO AGENT
 - These ISTIO AGENT is responsibel for passing configuration secrets to ENVOY PROXY
-- 
+
+### Install istio
+- ``` https://istio.io/latest/docs/setup/getting-started/#download ```
+- ``` https://istio.io/latest/docs/setup/install/istioctl/ ```
+- ``` istioctl install --set profile=demo -y ``` To install
+- ``` istioctl verify-install ``` To Verify
